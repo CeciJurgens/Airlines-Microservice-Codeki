@@ -14,8 +14,8 @@ import java.util.stream.Collectors;
 @Component
 public class FlightUtils {
 
-    @Value("${dolar.card-url}")
-    private String DOLAR_API_CARD;
+    @Value("${dolarapi.url:}")
+    private String URL_DOLAR;
 
     @Bean
     public RestTemplate restTemplate(){
@@ -36,7 +36,7 @@ public class FlightUtils {
 
     public Dolar fetchDolar(){
         RestTemplate restTemplate = restTemplate();
-        return restTemplate.getForObject(DOLAR_API_CARD, Dolar.class);
+        return restTemplate.getForObject(URL_DOLAR, Dolar.class);
     }
 /*
     public Dolar[] fetchAllDolars(){
