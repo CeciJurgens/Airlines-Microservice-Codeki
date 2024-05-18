@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TicketService {
@@ -26,7 +27,39 @@ public class TicketService {
 
     public Ticket addTicketId(Ticket ticket, Long id){
         FlightDto flightToTicket = flightClient.findFlightById().orElseThrow(()-> new RuntimeException("Flight with id" + id + "not found"));
+        ticket.setFlight(flightToTicket);
         tickets.add(ticket);
         return ticket;
+    }
+
+    public Optional<Ticket> findById(Long ticketId) {
+        return tickets.stream()
+                .filter(ticket -> ticket.getId().equals(ticketId))
+                .findFirst();
+    }
+
+    public Ticket updateTicket(Ticket updatedTicket) {
+        Optional<Ticket> existingTicketOptional = findById(updatedTicket.getId());
+
+        if (existingTicketOptional.isPresent()) {
+            Ticket existingTicket = existingTicketOptional.get();
+            existingTicket.setPassengerName(updatedTicket.getPassengerName());
+            existingTicket.setPassengerEmail(updatedTicket.getPassengerEmail());
+            existingTicket.setPassengerPassport(updatedTicket.getPassengerPassport());
+            return existingTicket;
+        } else {
+            throw new IllegalArgumentException("Ticket not found with ID: " + updatedTicket.getId());
+        }
+    }
+
+
+    public void deleteTicket(Long ticketId) {
+        Optional<Ticket> ticketOptional = findById(ticketId);
+
+        if (ticketOptional.isPresent()) {
+            tickets.remove(ticketOptional.get());
+        } else {
+            throw new IllegalArgumentException("Ticket not found with ID: " + ticketId);
+        }
     }
 }

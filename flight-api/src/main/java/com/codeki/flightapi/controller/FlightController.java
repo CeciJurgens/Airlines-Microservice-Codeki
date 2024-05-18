@@ -51,11 +51,6 @@ public class FlightController {
         return flightService.getDolar();
     }
 
-    @PostMapping("/add/{companyId}")
-    public Flight createFlight(@PathVariable Long companyId, @RequestBody Flight flight){
-        return flightService.createFlight(flight, companyId);
-    }
-
     @DeleteMapping("/delete/{id}")
     public void deleteFlight(@PathVariable Long id){
         flightService.deleteFlight(id);

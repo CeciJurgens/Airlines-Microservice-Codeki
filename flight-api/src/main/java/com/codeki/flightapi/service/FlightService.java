@@ -1,5 +1,6 @@
 package com.codeki.flightapi.service;
 
+import com.codeki.flightapi.exceptions.ResourceNotFoundException;
 import com.codeki.flightapi.model.Company;
 import com.codeki.flightapi.model.Dolar;
 import com.codeki.flightapi.model.Flight;
