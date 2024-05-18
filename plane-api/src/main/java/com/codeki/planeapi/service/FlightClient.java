@@ -1,6 +1,6 @@
-package com.codeki.ticketapi.services;
+package com.codeki.planeapi.service;
 
-import com.codeki.ticketapi.model.FlightDto;
+import com.codeki.planeapi.model.FlightDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -9,10 +9,10 @@ import java.util.Optional;
 
 @FeignClient(name = "flight-api")
 public interface FlightClient {
-    @GetMapping("/flights")
+    @GetMapping("/flight")
     List<FlightDto> getAllFlights();
 
-    @GetMapping("/flight/dolarprice")
+    @GetMapping("/dolarprice")
     double getDolar();
 
     @GetMapping("/flight/{id}")

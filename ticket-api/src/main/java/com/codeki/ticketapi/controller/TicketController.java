@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/tickets")
@@ -30,5 +31,15 @@ public class TicketController {
     @GetMapping("/flights")
     public List<FlightDto> getAllFlights(){
         return flightClient.getAllFlights();
+    }
+
+    @GetMapping("/dolar")
+    public double getDolar(){
+        return flightClient.getDolar();
+    }
+
+    @GetMapping("/flight/{id}")
+    public Optional<FlightDto> findFlightById(@PathVariable Long id){
+        return flightClient.findFlightById();
     }
 }

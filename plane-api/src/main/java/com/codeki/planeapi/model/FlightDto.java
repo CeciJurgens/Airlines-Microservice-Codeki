@@ -1,4 +1,4 @@
-package com.codeki.ticketapi.model;
+package com.codeki.planeapi.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

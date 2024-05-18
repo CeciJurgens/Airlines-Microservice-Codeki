@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/ticket-api/pom.xml" />
         <option value="$PROJECT_DIR$/config-server/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/plane-api/pom.xml" />
       </list>
     </option>
   </component>
