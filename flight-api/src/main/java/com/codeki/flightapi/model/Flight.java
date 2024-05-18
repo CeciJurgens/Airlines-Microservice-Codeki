@@ -5,11 +5,9 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Setter
-@Getter
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Flight {
 

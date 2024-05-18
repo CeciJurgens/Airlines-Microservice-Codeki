@@ -9,8 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Getter
-@Setter
 @Entity
 public class Company {
     @Id
