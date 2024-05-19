@@ -1,5 +1,6 @@
 package com.codeki.ticketapi.services;
 
+import com.codeki.ticketapi.model.CompanyDto;
 import com.codeki.ticketapi.model.FlightDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,5 +25,11 @@ public interface FlightClient {
 
     @GetMapping("/flights/destination/{destination}")
     List<FlightDto> findFlightsByDestination(@PathVariable("destination") String destination);
+
+    @GetMapping("/companies")
+    List<CompanyDto> getAllCompanies();
+
+    @GetMapping("/companies/{id}")
+    CompanyDto findCompanyById(@PathVariable("id") Long id);
 
 }

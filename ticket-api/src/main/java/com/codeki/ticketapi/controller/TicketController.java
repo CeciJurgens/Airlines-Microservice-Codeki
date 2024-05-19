@@ -1,5 +1,6 @@
 package com.codeki.ticketapi.controller;
 
+import com.codeki.ticketapi.model.CompanyDto;
 import com.codeki.ticketapi.model.FlightDto;
 import com.codeki.ticketapi.model.Ticket;
 import com.codeki.ticketapi.services.FlightClient;
@@ -39,6 +40,11 @@ public class TicketController {
         return flightClient.getAllFlights();
     }
 
+    @GetMapping("/companies")
+    public List<CompanyDto> getAllCompanies(){
+        return flightClient.getAllCompanies();
+    }
+
     @GetMapping("/dolar")
     public double getDolar(){
         return flightClient.getDolar();
@@ -69,7 +75,6 @@ public class TicketController {
     @GetMapping("/{ticketId}")
     public Ticket getTicketById(@PathVariable Long ticketId) {
         Optional<Ticket> ticketOptional = ticketService.findById(ticketId);
-
         return ticketOptional.orElse(null);
     }
 
@@ -81,6 +86,11 @@ public class TicketController {
     @GetMapping("/flights/destination/{destination}")
     public List<FlightDto> getFlightsByDestination(@PathVariable String destination) {
         return flightClient.findFlightsByDestination(destination);
+    }
+
+    @GetMapping("/passport/{passport}")
+    public List<FlightDto>  findTicketById(@PathVariable String passport) {
+        return ticketService.findFlightsByPassport(passport);
     }
 
 }

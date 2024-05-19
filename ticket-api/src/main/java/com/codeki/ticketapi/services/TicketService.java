@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class TicketService {
@@ -36,6 +37,13 @@ public class TicketService {
         return tickets.stream()
                 .filter(ticket -> ticket.getId().equals(ticketId))
                 .findFirst();
+    }
+
+    public List<FlightDto> findFlightsByPassport(String passport) {
+        return tickets.stream()
+                .filter(ticket -> ticket.getPassengerPassport().equalsIgnoreCase(passport))
+                .map(Ticket::getFlight)
+                .collect(Collectors.toList());
     }
 
     public Ticket updateTicket(Ticket updatedTicket) {
