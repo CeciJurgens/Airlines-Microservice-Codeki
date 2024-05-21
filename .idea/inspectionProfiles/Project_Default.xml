@@ -12,6 +12,19 @@
           <option value="plane-api" />
           <option value="plane-api" />
           <option value="plane-api" />
+          <option value="ticket-api" />
+          <option value="ticket-api" />
+          <option value="ticket-api" />
+          <option value="ticket-api" />
+          <option value="ticket-api" />
+          <option value="flight-api" />
+          <option value="flight-api" />
+          <option value="flight-api" />
+          <option value="flight-api" />
+          <option value="flight-api" />
+          <option value="eureka-server" />
+          <option value="eureka-server" />
+          <option value="eureka-server" />
         </list>
       </option>
       <option name="ignoredPackages">
@@ -21,10 +34,36 @@
           <option value="com.thoughtworks.xstream:xstream:1.4.19" />
           <option value="org.apache.httpcomponents:httpclient:4.5.3" />
           <option value="commons-fileupload:commons-fileupload:1.5" />
+          <option value="org.apache.httpcomponents:httpclient:4.5.3" />
+          <option value="com.thoughtworks.xstream:xstream:1.4.19" />
+          <option value="com.google.guava:guava:19.0" />
+          <option value="com.fasterxml.woodstox:woodstox-core:6.2.1" />
+          <option value="commons-fileupload:commons-fileupload:1.5" />
+          <option value="org.apache.httpcomponents:httpclient:4.5.3" />
+          <option value="com.thoughtworks.xstream:xstream:1.4.19" />
+          <option value="com.google.guava:guava:19.0" />
+          <option value="com.fasterxml.woodstox:woodstox-core:6.2.1" />
+          <option value="commons-fileupload:commons-fileupload:1.5" />
+          <option value="org.apache.httpcomponents:httpclient:4.5.3" />
+          <option value="com.thoughtworks.xstream:xstream:1.4.19" />
+          <option value="com.google.guava:guava:19.0" />
         </list>
       </option>
       <option name="ignoredReasons">
         <list>
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
           <option value="Not exploitable" />
           <option value="Not exploitable" />
           <option value="Not exploitable" />
